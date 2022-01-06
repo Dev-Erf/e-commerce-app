@@ -1,8 +1,95 @@
 const express = require('express');
 const db = require('../db/index.js');
 const dbUtils = require('../utils/dbUtils.js');
-
 const RouterInterface = require('./routeInterface.js');
+
+/**
+ * @swagger
+ /carts:
+ *     get:
+ *       tags:
+ *       - "carts"
+ *       summary: "get all the items"
+ *       description: ""
+ *       produces:
+ *       - "application/json"
+ *
+ *       responses:
+ *         "500":
+ *           description: "database Error"
+ *         "200":
+ *           description: "an array containing all the items"
+ *     post:
+ *       tags:
+ *       - "carts"
+ *       summary: "add another item"
+ *       description: ""
+ *       consumes:
+ *       - "application/json"
+ *       produces:
+ *       - "application/json"
+ *       parameters:
+ *       - name: "body"
+ *         in: "body"
+ *         description: "item object need to be added , it should be inside of row field of body object"
+ *         required: true
+ *         schema:
+ *           type: "array"
+ *           items:
+ *             type: "object"
+ *       responses:
+ *         "500":
+ *           description: "database Error"
+ *         "200":
+ *           description: "an array containing all the items"
+ *
+     /carts/{cartId}:
+ *     parameters:
+ *       - name: "cartId"
+ *         in: "path"
+ *         description: "id of item"
+ *         required: true
+ *         type: "string"
+ *
+ *     get:
+ *       tags:
+ *       - "carts"
+ *       summary: "return a specific item"
+ *       description: ""
+ *       produces:
+ *       - "application/json"
+ *       responses:
+ *         "500":
+ *           description: "database Error"
+ *         "200":
+ *           description: "an object containing specific item"
+ *     put:
+ *       tags:
+ *       - "carts"
+ *       summary: "change a specific item"
+ *       description: ""
+ *       produces:
+ *       - "application/json"
+ *       responses:
+ *         "500":
+ *           description: "database Error"
+ *         "204":
+ *           description: "empty body"
+ *     delete:
+ *       tags:
+ *       - "carts"
+ *       summary: "return a specific item"
+ *       description: ""
+ *       produces:
+ *       - "application/json"
+ *       responses:
+ *         "500":
+ *           description: "database Error"
+ *         "204":
+ *           description: "empty body"
+ *
+ *
+ */
 
 router = new RouterInterface('cart');
 router.getAll();

@@ -3,8 +3,14 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const session = require('express-session');
+const swaggerJsdoc = require('swagger-jsdoc');
+const swaggerJsdocConf = require('./config/swaggerJsdocConf.js');
+const swaggerUi = require('swagger-ui-express');
 //const RedisStore = require('connect-redis')(session);
 //const redis = require('redis');
+
+
+
 
 const dbUtils = require('./utils/dbUtils.js');
 const configurePassport = require('./config/passport.js')(passport);
@@ -51,6 +57,34 @@ app.use(passport.initialize());
 app.use(passport.session());
 let ses = null;
 
+
+/**
+ * @swagger
+ /login:
+ *     post:
+ *       tags:
+ *       - "login"
+ *       summary: "login user"
+ *       description: ""
+ *       consumes:
+ *       - "application/json"
+ *       produces:
+ *       - "application/json"
+ *       parameters:
+ *       - name: "body"
+ *         in: "body"
+ *         description: "item object need to be added , it should be inside of row field of body object"
+ *         required: true
+ *         schema:
+ *           type: "array"
+ *           items:
+ *             type: "object"
+ *       responses:
+ *         "403":
+ *           description: "not authorized"
+ *         "201":
+ *           description: "user succefully logged in"
+ */
 app.post('/login', passport.authenticate('local'), (req, res, next) => {
   console.log(`${req.user.email} is authenticated`);
   ses = req.user;
@@ -70,7 +104,8 @@ app.use('/carts', (req,res,next) => {
   }
 } , cartRouter);
 
-
+const openapiSpec = swaggerJsdoc(swaggerJsdocConf);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(openapiSpec));
 
 
 const port = process.env.PORT || 4000;
