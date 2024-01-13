@@ -51,8 +51,8 @@ npm start
     
 The project requires certain configuration settings. Please update the following files with your own configurations:
     
-    **config/** : Configure the Passport settings.
-    **db/** : Configure the PostgreSQL database connection settings.
+    ** config/ ** : Configure the Passport settings.
+    ** db/ ** : Configure the PostgreSQL database connection settings.
     
 ## Support
     
