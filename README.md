@@ -51,16 +51,16 @@ npm start
     
 The project requires certain configuration settings. Please update the following files with your own configurations:
     
-    ** config/ ** : Configure the Passport settings.
-    ** db/ ** : Configure the PostgreSQL database connection settings.
+** config/ ** : Configure the Passport settings.
+** db/ ** : Configure the PostgreSQL database connection settings.
     
 ## Support
     
-    <p>You can show your support by starring this project. ★</p>
-    <a href="https://github.com/Dev-Erf/Dev-Erf.github.io/stargazers">
-      <img src="https://img.shields.io/github/stars/Dev-Erf/Dev-Erf.github.io?style=social" alt="Github Star">
-    </a>
+<p>You can show your support by starring this project. ★</p>
+<a href="https://github.com/Dev-Erf/Dev-Erf.github.io/stargazers">
+   <img src="https://img.shields.io/github/stars/Dev-Erf/Dev-Erf.github.io?style=social" alt="Github Star">
+</a>
 
 ## Licence
-    [MIT](https://github.com/Dev-Erf/Dev-Erf.github.io/blob/main/LICENSE)
+[MIT](https://github.com/Dev-Erf/Dev-Erf.github.io/blob/main/LICENSE)
     
