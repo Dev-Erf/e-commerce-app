@@ -57,7 +57,7 @@ The project requires certain configuration settings. Please update the following
     
 ## Support
     
-<p>You can show your support by starring this project. ★</p>
+<p>You can show your support by starring this project. </p>
 <a href="https://github.com/Dev-Erf/Dev-Erf.github.io/stargazers">
    <img src="https://img.shields.io/github/stars/Dev-Erf/Dev-Erf.github.io?style=social" alt="Github Star">
 </a>
